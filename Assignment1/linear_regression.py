@@ -19,7 +19,7 @@ class LinearRegression():
                 m rows (#samples) and n columns (#features)
             y (array<m>): a vector of floats
         """
-        if len(X.shape) == 1:
+        if len(X.shape) == 1: # Reshape for shape issues
             X = np.reshape(X, (X.shape[0],1))
             y = np.reshape(y, (y.shape[0],1))
             
@@ -55,6 +55,9 @@ class LinearRegression():
         return np.mean((y - y_pred) ** 2)
     
     def compute_gradients(self, X, y, y_pred):
+        """
+        Compute gradient for Mean square error for weights and bias separately
+        """
         samples = X.shape[0]
         grad_w = (-2/samples) * np.dot(X.T, (y - y_pred))
         grad_b = (-2/samples) * np.sum(y - y_pred)
