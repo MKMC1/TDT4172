@@ -21,10 +21,10 @@ class LinearRegression():
         """
         if len(X.shape) == 1: # Reshape for shape issues
             X = np.reshape(X, (X.shape[0],1))
-            y = np.reshape(y, (y.shape[0],1))
-            
+        
+        y = np.reshape(y, (y.shape[0],1))    
         self.weights = np.random.randn(X.shape[1]).reshape(X.shape[1], 1)    
-        self.bias = 0
+        self.bias = 4
         
         for _ in range(self.epochs):
             y_pred = self.predict(X)

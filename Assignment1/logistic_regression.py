@@ -24,8 +24,10 @@ class LogisticRegression():
         """
         if len(X.shape) == 1:
             X = np.reshape(X, (X.shape[0],1))
+        
+        if len(y.shape) == 1:
             y = np.reshape(y, (y.shape[0],1))
-            
+                
         samples, features = X.shape
         self.weights = np.random.randn(features).reshape(features, 1)
         self.bias = 0
@@ -42,6 +44,7 @@ class LogisticRegression():
     def predict(self, X):
         if len(X.shape) == 1:
             X = np.reshape(X, (X.shape[0],1))
+            
         lin_mod = self.linear_model(X)
         y_pred = self.sigmoid_function(lin_mod)
         return [1 if _y > self.threshold else 0 for _y in y_pred]
@@ -70,7 +73,7 @@ class LogisticRegression():
         return np.mean(y1 + y2)
     
     def compute_gradients(self, X, y, y_pred):
-        grad_w = np.matmul((y_pred - y).transpose(), X)
+        grad_w = np.matmul(X.transpose(), y_pred - y)
         grad_b = y_pred - y
         return grad_w, grad_b
     
