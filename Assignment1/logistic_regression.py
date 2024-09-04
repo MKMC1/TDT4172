@@ -27,7 +27,8 @@ class LogisticRegression():
         
         if len(y.shape) == 1:
             y = np.reshape(y, (y.shape[0],1))
-                
+        
+        y= y.astype('int64')
         samples, features = X.shape
         self.weights = np.random.randn(features).reshape(features, 1)
         self.bias = 0
@@ -39,7 +40,9 @@ class LogisticRegression():
             self.update_parameters(grad_w, grad_b)
             
             self.losses.append(self._compute_loss(y, y_pred))
-            self.accuracies.append(accuracy(y, self.predict(X)))
+            predictions = np.reshape(np.array(self.predict(X)),(X.shape[0],1))
+            acc = self.accuracy(y, predictions)
+            self.accuracies.append(acc)
             
     def predict(self, X):
         if len(X.shape) == 1:
@@ -90,5 +93,5 @@ class LogisticRegression():
     def _get_accuracies(self):
         return self.accuracies
 
-def accuracy(y, y_pred):
-    return np.mean(y == y_pred)
+    def accuracy(self, y, y_pred):
+        return np.mean(y == y_pred)
