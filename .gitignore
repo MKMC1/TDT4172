@@ -2,3 +2,4 @@ environment.yml
 /Assignment2_blueprint/nn_data.csv
 /Assignment2_blueprint/sample_submission.csv
 /Assignment2_blueprint/unsupervised_data.csv
+/Assignment2_blueprint/dbscan_results_umap.csv
