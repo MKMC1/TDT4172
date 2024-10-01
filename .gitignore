@@ -3,3 +3,13 @@ environment.yml
 /Assignment2_blueprint/sample_submission.csv
 /Assignment2_blueprint/unsupervised_data.csv
 /Assignment2_blueprint/dbscan_results_umap.csv
+Assignment2_blueprint/dbscan_results_neighbor30_eps3.4.csv
+Assignment2_blueprint/dbscan_results_neighbor30.csv
+Assignment2_blueprint/dbscan_results_pca80_eps1.csv
+Assignment2_blueprint/dbscan_results_pca90_eps1.csv
+Assignment2_blueprint/dbscan_results_pca95_eps1.csv
+Assignment2_blueprint/dbscan_results_pca95_eps2.7.csv
+Assignment2_blueprint/dbscan_results_pca95_eps2.csv
+Assignment2_blueprint/dbscan_results_pca95_eps3.csv
+Assignment2_blueprint/dbscan_results_umap_eps3.5.csv
+Assignment2_blueprint/dbscan_results_umap_eps3.csv
