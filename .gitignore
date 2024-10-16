@@ -1,3 +1,4 @@
+.gitignore
 environment.yml
 /Assignment2_blueprint/nn_data.csv
 /Assignment2_blueprint/sample_submission.csv
